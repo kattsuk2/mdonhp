@@ -1,0 +1,23 @@
+{
+  "name": "mdonhp",
+  "version": "1.0.0",
+  "description": "mdon home page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kattsuk2/mdonhp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kattsuk2/mdonhp/issues"
+  },
+  "homepage": "https://github.com/kattsuk2/mdonhp#readme",
+  "dependencies": {
+    "bulma": "^0.7.5"
+  }
+}
