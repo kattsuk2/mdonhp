@@ -1,0 +1,26 @@
+<svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32.01" viewBox="0 0 32 32.01">
+    <defs>
+        <style>
+            .cls-1 {
+            fill: none;
+            }
+
+            .cls-2 {
+            clip-path: url(#clip-path);
+            }
+
+            .cls-3 {
+            fill: #fff;
+            }
+        </style>
+        <clipPath id="clip-path" transform="translate(-944 -524.99)">
+            <rect class="cls-1" x="944" y="524" width="32" height="33"/>
+        </clipPath>
+    </defs>
+    <title>ベクトルスマートオブジェクト</title>
+    <g class="cls-2">
+        <path class="cls-3"
+              d="M973.86,533A16,16,0,1,0,968,554.85,16,16,0,0,0,973.86,533Zm-7.46,19.08a12.8,12.8,0,1,1,4.69-17.48,12.79,12.79,0,0,1-4.69,17.48Zm-.64-11.73-8.38-4.89c-.76-.45-1.38-.09-1.37.79l0,9.7c0,.89.63,1.25,1.4.8l8.31-4.8a.84.84,0,0,0,0-1.6Zm0,0"
+              transform="translate(-944 -524.99)"/>
+    </g>
+</svg>

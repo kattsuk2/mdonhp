@@ -1,0 +1,17 @@
+<svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" width="386" height="386" viewBox="0 0 386 386">
+    <defs>
+        <style>
+            .cls-1 {
+            fill: #fff;
+            stroke: #fff;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 6px;
+            }
+        </style>
+    </defs>
+    <title>icon_pr_external-link-white</title>
+    <path class="cls-1"
+          d="M341.8,341.8H46.23V46.23H174.05V4H46.23A42.34,42.34,0,0,0,4,46.23V341.8A42.3,42.3,0,0,0,46.23,384H341.8A42.25,42.25,0,0,0,384,341.8v-128H341.8ZM236.23,4V46.23h76L105.3,253.12l29.59,29.51L341.8,75.71V151.8H384V4Zm0,0"
+          transform="translate(-0.95 -0.95)"/>
+</svg>
