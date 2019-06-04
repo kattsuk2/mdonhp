@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/bulma.css">
+  <link rel="stylesheet" href="../css/prettify.css">
+  <script type="text/javascript" src="../js/prettify.js?lang=html"></script>
+</head>
+<body onload="PR.prettyPrint()">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Lesson 1</h1>
+      <article class="content">
+        <h2 class="title">Chromeのデベロッパーズツールを使おう</h2>
+        <p><a href="https://www.google.com/intl/ja/chrome/">ダウンロードページ</a></p>
+
+        <p>デベロッパーズツールの使い方を説明、参加されなかった方は聞いてください。</p>
+      </article>
+
+      <article class="content">
+        <h2 class="title has-text-success">HTMLで1ページに最低限必要なもの</h2>
+
+        <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;!-- headタグ内にはこのHTMLについての情報を書きます。タイトルやキーワード、CSSやJavascriptなどの読み込んでおきたい外部ファイル --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- bodyタグ内にはこのHTML内容について書きます。 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+      </article>
+
+      <article class="content">
+        <h2 class="title has-text-success">CSS</h2>
+        <p>CSSは、WEBページを装飾するための言語です。<br>書き方は、以下のようになります。</p>
+        <p>CSSは、HTMLファイルの中、またはCSSファイル、HTMLタグの属性としての3種類</p>
+        <h3 class="subtitle">CSSでスタイルを書ける場所</h3>
+
+        <p>HTMLファイルの中に</p>
+        <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+/* headタグの中にstyleタグで */
+&lt;style&gt;
+p(セレクタ) {
+  color(プロパティ): #ff0000（値）;
+  font-size(プロパティ): 1.5pt（値）;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+/* bodyタグの中にstyleタグで */
+&lt;style&gt;
+p(セレクタ) {
+  color(プロパティ): #ff0000（値）;
+  font-size(プロパティ): 1.5pt（値）;
+}
+&lt;/style&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+
+        <p>別ファイルに</p>
+        <pre class="prettyprint linenums">
+/* style.css */
+@charset "utf-8"; /* html も utf-8の文字コードなので合わせましょう */
+
+p(セレクタ) {
+  color(プロパティ): #ff0000（値）;
+  font-size(プロパティ): 1.5pt（値）;
+}
+          </pre>
+
+        <p>HTMLタグに直接</p>
+        <pre class="prettyprint linenums">
+            &lt;div style="color(プロパティ): #ff0000（値）;font-size(プロパティ): 1.5pt（値）;"&gt;ほげほげ&lt;/div&gt;
+        </pre>
+      </article>
+
+      <article class="content">
+        <h2 class="title has-text-success">HTMLタグに直接styleを書かない場合の要素の指定方法</h2>
+<p>3つのdivタグでなにも書いていないものclass属性があるもの、ID属性があるもので説明します。</p>
+        <pre class="prettyprint linenums">
+          &lt;!DOCTYPE html&gt;
+          &lt;head&gt;
+            &lt;meta charset="utf-8"&gt;
+            &lt;title&gt;CSSサンプル&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;style&gt;
+              div {
+                color: #333; /* divタグのフォントカラーを#333にする すべてのdivタグのフォントカラーが変わる*/
+              }
+
+              .color-red {
+                color: red; /* htmlタグのクラス属性color-redが付いているタグの色が赤に変わる (複数のタグにかける)*/
+              }
+
+              .color-blue {
+                color: bule; /* htmlタグのクラス属性color-redが付いているタグの色が青に変わる (複数のタグにかける)*/
+              }
+
+              #ColorBlack {
+                color: black; /* ID属性ColorBlackが付いたタグのみ色が変わる（HTMLページ内で一回だけ書ける） */
+              }
+            &lt;/style&gt;
+            &lt;div&gt;要素1&lt;/div&gt;
+            &lt;div class="color-red"&gt;要素2&lt;/div&gt;
+            &lt;div id="ColorBlack"&gt;要素3&lt;/div&gt;
+            &lt;div class="color-red color-bule"&gt;要素4&lt;/div&gt; &lt;!-- クラスはスペース区切りで複数指定できる --&gt;
+            &lt;!-- bodyタグ内にはこのHTML内容について書きます。 --&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;
+        </pre>
+      </article>
+
+      <article class="content">
+          <h2 class="title has-text-success">スタイルの上書き</h2>
+          <p>HTMLの上から順にCSSは適用されていきます。一番最後に読み込まれたものが基本は適用されます。</p>
+          <pre class="prettyprint linenums">
+            &lt;!DOCTYPE html&gt;
+            &lt;head&gt;
+              &lt;meta charset="utf-8"&gt;
+              &lt;title&gt;CSSサンプル&lt;/title&gt;
+              &lt;style&gt;
+                /* 最初フォントカラー #333ねOK */
+                div {
+                  color: #333; /* divタグのフォントカラーを#333にする すべてのdivタグのフォントカラーが変わる*/
+                }
+              &lt;/style&gt;
+              /* 外部ファイルを読み込んだらdiv フォントカラー blue　あっ、blueねOK */
+              &lt;link rel="stylesheet" href="style.css"&gt; <- 中には div { color: blue; }が書いてある
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;style&gt;
+                /* またdiv にフォントカラーred　わかったよ。。。仕方ないなredにしとくよ */
+                div {
+                  color: red;
+                }
+  
+              &lt;/style&gt;
+              &lt;div&gt;要素1&lt;/div&gt; <- 文字はredになる
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </pre>
+        </article>
+
+        <article class="content">
+            <h2 class="title has-text-success">スタイル適用には強さが必要</h2>
+            <p>これまで、CSSの指定にはHTMLタグに書くかクラス属性を使うかID属性を使う方法を説明しました。ではdivタグにすべて指定されていたらどれが適用されるの？</p>
+            <div><img src="img/bl-tsk-cssysen-011.gif"></div>
+            <p>になります。ID属性より強いのはHTMLタグに直接かくstyle=""です。</p>
+            <pre class="prettyprint linenums">
+                &lt;!DOCTYPE html&gt;
+                &lt;head&gt;
+                  &lt;meta charset="utf-8"&gt;
+                  &lt;title&gt;CSSサンプル&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;style&gt;
+                    #ColorBlack {
+                      color: black; /* ID属性ColorBlackが付いたタグのみ色が変わる（HTMLページ内で一回だけ書ける） */
+                    }
+      
+                    .color-red {
+                      color: red; /* htmlタグのクラス属性color-redが付いているタグの色が赤に変わる (複数のタグにかける)*/
+                    }
+      
+                    div {
+                      color: #333; /* divタグのフォントカラーを#333にする すべてのdivタグのフォントカラーが変わる*/
+                    }
+      
+                  &lt;/style&gt;
+                  &lt;div id="ColorBlack" class="color-red" style="color: gray"&gt;要素&lt;/div&gt;　<- grayが勝つぜ
+                &lt;/body&gt;
+                &lt;/html&gt;
+                  </pre>
+          </article>
+        </div>
+  </section>
+</body>
+</html>

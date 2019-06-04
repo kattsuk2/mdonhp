@@ -19,5 +19,8 @@
   "homepage": "https://github.com/kattsuk2/mdonhp#readme",
   "dependencies": {
     "bulma": "^0.7.5"
+  },
+  "devDependencies": {
+    "code-prettify": "^0.1.0"
   }
 }
